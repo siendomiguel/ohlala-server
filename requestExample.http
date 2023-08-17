@@ -1,0 +1,5 @@
+### Para recuperar todos los servicios
+GET http://localhost:3000/api/v1/servicio
+
+### Para recuperar un servicio por ID
+GET http://localhost:3000/api/v1/servicio/64dd37651c3c1d79e6284dec

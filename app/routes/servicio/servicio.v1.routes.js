@@ -3,7 +3,8 @@ import {
   getAllServicios,
   createServicio,
   deleteServicio,
-  updateServicio
+  updateServicio,
+  getServicioById
 } from '../../controllers/servicioController.js'
 
 export const servicioRouter = Router()
@@ -13,3 +14,4 @@ servicioRouter
   .post('/', createServicio)
   .patch('/:id', updateServicio)
   .delete('/:id', deleteServicio)
+  .get('/:id', getServicioById)

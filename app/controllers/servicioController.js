@@ -19,6 +19,19 @@ export const createServicio = async (req, res) => {
   }
 }
 
+export const getServicioById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const servicio = await servicioService.getServicioById(id)
+    if (!servicio) {
+      return res.status(400).json({ message: 'Servicio no encontrado' })
+    }
+    res.status(200).json(servicio)
+  } catch (error) {
+    res.status(400).send({ error })
+  }
+}
+
 export const deleteServicio = async (req, res) => {
   try {
     const { id } = req.params

@@ -29,11 +29,24 @@ const deleteServicioById = async (id) => {
   }
 }
 
+const getServicioById = async (id) => {
+  try {
+    const servicioById = await Servicio.findById(id)
+    return servicioById
+  } catch (error) {
+    throw new Error('Error al obtener el servicio')
+  }
+}
+
 const updateServicioById = async (id, updateData) => {
   try {
-    const actualizacionServicio = await Servicio.findByIdAndUpdate(id, updateData, {
-      new: true
-    })
+    const actualizacionServicio = await Servicio.findByIdAndUpdate(
+      id,
+      updateData,
+      {
+        new: true
+      }
+    )
     return actualizacionServicio
   } catch (error) {
     throw new Error('Error al intentar actualizar el documento')
@@ -44,7 +57,8 @@ const servicioService = {
   getAllServicios,
   createServicio,
   deleteServicioById,
-  updateServicioById
+  updateServicioById,
+  getServicioById
 }
 
 export default servicioService
