@@ -4,6 +4,7 @@ export const registroDiarioSchema = new mongoose.Schema(
   {
     fecha: { type: Date, default: Date.now },
     nombreServicio: { type: String, required: true },
+    materialServicio: { type: Number, default: 0 },
     ingresoEfectivo: { type: Number, default: 0 },
     ingresoBancoDavivienda: { type: Number, default: 0 },
     ingresoBancoBancolombia: { type: Number, default: 0 },
