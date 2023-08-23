@@ -1,14 +1,16 @@
 import mongoose from 'mongoose'
 
-const especialitySchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: false
+const especialitySchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: false
+    }
+  },
+  {
+    _id: false
   }
-},
-{
-  _id: false
-})
+)
 
 export const personalSchema = new mongoose.Schema(
   {
