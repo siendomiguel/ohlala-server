@@ -1,5 +1,6 @@
 import express, { json } from 'express'
 import dotenv from 'dotenv'
+import cors from 'cors'
 import databaseConnection from './config/database.js'
 import { router } from './app/routes/index.js'
 dotenv.config()
@@ -21,6 +22,7 @@ databaseConnection.on('error', (err) => {
 })
 
 app.use(json())
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send({ message: 'Mi API' })
