@@ -15,7 +15,7 @@ const createRegistro = async (registroData) => {
     const savedRegistro = await newRegistro.save()
     return savedRegistro
   } catch (error) {
-    throw new Error('Error al crear el registro')
+    throw new Error(`Error al crear el registro: ${error}`)
   }
 }
 
