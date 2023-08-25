@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 dotenv.config()
 
-const uri = `mongodb+srv://estudiodebellezaohlala:${process.env.DB}@ohlalabackend.ph3w9qc.mongodb.net/`
+const uri = `mongodb+srv://${process.env.USER}:${process.env.DB}@${process.env.DB_PROJECT}.ph3w9qc.mongodb.net/`
 
 const options = {
   useNewUrlParser: true,

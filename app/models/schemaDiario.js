@@ -4,19 +4,20 @@ export const registroDiarioSchema = new mongoose.Schema(
   {
     fecha: { type: Date, default: Date.now },
     nombreServicio: { type: String, required: true },
-    materialServicio: { type: Number, default: 0 },
-    ingresoEfectivo: { type: Number, default: 0 },
-    ingresoBancoDavivienda: { type: Number, default: 0 },
-    ingresoBancoBancolombia: { type: Number, default: 0 },
-    egresoDiarioEfectivo: { type: Number, default: 0 },
-    egresosDiarioBancolombia: { type: Number, default: 0 },
-    egresosDiarioDavivienda: { type: Number, default: 0 },
-    costoMaterialServicio: { type: Number, default: 0 },
-    gastoMaterialEfectivo: { type: Number, default: 0 },
-    gastoMaterialBancolombia: { type: Number, default: 0 },
-    gastoMaterialDavivienda: { type: Number, default: 0 },
-    vale: { type: Number, default: 0 },
-    usuario: { type: String, required: true }
+    materialServicio: { type: Number, default: null },
+    ingresoEfectivo: { type: Number, default: null },
+    ingresoBancoDavivienda: { type: Number, default: null },
+    ingresoBancoBancolombia: { type: Number, default: null },
+    costoMaterialServicio: { type: Number, default: null },
+    gastoDiarioEfectivo: { type: Number, default: null },
+    gastoDiarioBancolombia: { type: Number, default: null },
+    gastoDiarioDavivienda: { type: Number, default: null },
+    vale: { type: Number, default: null },
+    usuario: { type: String, required: true },
+    gastoMaterialEfectivo: { type: Number, default: null },
+    gastoMaterialBancolombia: { type: Number, default: null },
+    gastoMaterialDavivienda: { type: Number, default: null },
+    typeRegister: { type: String, required: true }
   },
   {
     timestamps: {
