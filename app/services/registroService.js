@@ -2,7 +2,9 @@ import { RegistroDiario } from '../models/registro.js'
 
 const getAllRegistros = async () => {
   try {
-    const registrosDiariosList = await RegistroDiario.find()
+    const registrosDiariosList = await RegistroDiario.find().sort({
+      created_at: -1
+    })
     return registrosDiariosList
   } catch (error) {
     throw new Error('Error al obtener los registros diarios')
@@ -24,15 +26,21 @@ const getRegistroById = async (id) => {
     const registro = await RegistroDiario.findById(id)
     return registro
   } catch (error) {
-    throw new Error('Error al obtener el registro de un ingreso o egreso diario por su ID')
+    throw new Error(
+      'Error al obtener el registro de un ingreso o egreso diario por su ID'
+    )
   }
 }
 
 const updateRegistro = async (id, updateData) => {
   try {
-    const patchedRegistro = await RegistroDiario.findByIdAndUpdate(id, updateData, {
-      new: true // Devuelve el documento actualizado
-    })
+    const patchedRegistro = await RegistroDiario.findByIdAndUpdate(
+      id,
+      updateData,
+      {
+        new: true // Devuelve el documento actualizado
+      }
+    )
     return patchedRegistro
   } catch (error) {
     throw new Error(
