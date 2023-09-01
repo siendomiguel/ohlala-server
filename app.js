@@ -24,7 +24,7 @@ databaseConnection.on('error', (err) => {
 app.use(json())
 app.use(cors())
 
-const URI_ALLOW = ['https://next-basic-crud.vercel.app/new', 'http://localhost:3000']
+const URI_ALLOW = ['https://next-basic-crud.vercel.app', 'http://localhost:3000']
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', URI_ALLOW)
