@@ -27,6 +27,10 @@ app.use(cors())
 const URI_ALLOW = ['https://next-basic-crud.vercel.app', 'http://localhost:3000']
 
 app.use((req, res, next) => {
+  const origin = req.headers.origin
+  if (URI_ALLOW.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Origin', URI_ALLOW)
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
