@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 export const registroDiarioSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    price: { type: Number, default: null },
+    value: { type: Number, default: null },
     priceMaterial: { type: Number, default: null },
     description: { type: String, default: null },
     madeBy: { type: String, default: null },
